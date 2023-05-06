@@ -1,0 +1,24 @@
+.tw-follow-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.tw-follow-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.tw-follow-card-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50px;
+}
+
+.tw-follow-card-info {
+  display: flex;
+  flex-direction: column;
+}
