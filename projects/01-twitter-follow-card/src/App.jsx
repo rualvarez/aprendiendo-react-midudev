@@ -32,7 +32,7 @@ function App() {
             key={username}
             username={username}
             avatar={avatar}
-            isFollowing={isFollowing}
+            initialIsFollowing={isFollowing}
           >
             {name}
           </TwitterFollowCard>
