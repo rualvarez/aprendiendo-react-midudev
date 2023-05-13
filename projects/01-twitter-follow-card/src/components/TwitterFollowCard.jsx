@@ -1,13 +1,13 @@
 import React from "react";
 import './../styles/TwitterFollowCard.css';
 
-export function TwitterFollowCard({ username, name, avatar }) {
+export function TwitterFollowCard({ children, username, avatar }) {
   return(
     <div className='tw-follow-card'>
       <div className='tw-follow-card-header'>
-        <img className='tw-follow-card-avatar' src={`https://unavatar.io/${avatar}`} alt={`Avatar de ${name}`} />
+        <img className='tw-follow-card-avatar' src={`https://unavatar.io/${avatar}`} alt={`Avatar de ${children}`} />
         <div className='tw-follow-card-info'>
-          <strong className='tw-follow-card-info-name'>{name}</strong>
+          <strong className='tw-follow-card-info-name'>{children}</strong>
           <span className='tw-follow-card-info-username'>{username}</span>
         </div>
       </div>

@@ -28,8 +28,10 @@ function App() {
           <TwitterFollowCard
             key={username}
             username={username}
-            name={name}
-            avatar={avatar} />
+            avatar={avatar}
+          >
+            {name}
+          </TwitterFollowCard>
         ))
       }
     </>
