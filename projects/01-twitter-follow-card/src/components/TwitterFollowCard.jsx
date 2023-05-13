@@ -1,7 +1,10 @@
 import React from "react";
 import './../styles/TwitterFollowCard.css';
 
-export function TwitterFollowCard({ children, username, avatar }) {
+export function TwitterFollowCard({ children, username, avatar, isFollowing }) {
+
+  const buttonText = isFollowing ? 'Siguiendo' : 'Seguir'
+
   return(
     <div className='tw-follow-card'>
       <div className='tw-follow-card-header'>
@@ -12,7 +15,7 @@ export function TwitterFollowCard({ children, username, avatar }) {
         </div>
       </div>
       <div className='tw-follow-card-button'>
-        <button>Seguir</button>
+        <button>{buttonText}</button>
       </div>
     </div>
   )
