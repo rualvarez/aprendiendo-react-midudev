@@ -26,6 +26,7 @@ function App() {
       {
         users.map(({ username, name, avatar }) => (
           <TwitterFollowCard
+            key={username}
             username={username}
             name={name}
             avatar={avatar} />
