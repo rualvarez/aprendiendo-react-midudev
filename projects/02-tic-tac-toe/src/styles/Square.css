@@ -6,3 +6,7 @@
     display: grid;
     place-items: center;
 }
+
+.is-selected {
+    background-color: #81A1C1;
+}

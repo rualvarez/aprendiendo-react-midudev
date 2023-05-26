@@ -12,3 +12,9 @@
 .reset-game {
   margin-bottom: 10px;
 }
+
+.turn {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}

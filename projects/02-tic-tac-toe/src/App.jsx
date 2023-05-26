@@ -49,6 +49,18 @@ function App () {
           })
         }
       </div>
+      <div className='turn'>
+        <Square 
+          isSelected={TURNS.X === turn}
+        >
+          {TURNS.X}
+        </Square>
+        <Square 
+          isSelected={TURNS.O === turn}
+        >
+          {TURNS.O}
+        </Square>
+      </div>
       <div>WINNER: {winner}</div>
     </div>
   )
