@@ -2,10 +2,12 @@ import { useState } from 'react'
 import './App.css'
 import { Square } from './components/Square'
 import { TURNS } from './constants';
+import { checkWinner } from './logic/board';
 
 function App () {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [turn, setTurn] = useState(TURNS.X);
+  const [winner, setWinner] = useState(null);
 
   const resetGame = () => {
     setBoard(Array(9).fill(null));
@@ -13,11 +15,14 @@ function App () {
 
   const updateBoard = (index) => {
 
-    if (board[index]) return;
+    if (board[index] || winner) return;
     
     const newBoard = [...board];
     newBoard[index] = turn;
     setBoard(newBoard);
+
+    const isWinner = checkWinner(newBoard)
+    if (isWinner) setWinner(isWinner)
     
     const newTurn = (turn === TURNS.X) ? TURNS.O : TURNS.X;
     setTurn(newTurn);
@@ -42,6 +47,7 @@ function App () {
           })
         }
       </div>
+      <div>WINNER: {winner}</div>
     </div>
   )
 }
