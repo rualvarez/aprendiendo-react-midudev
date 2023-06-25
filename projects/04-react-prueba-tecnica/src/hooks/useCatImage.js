@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { PREFIX_URL_IMAGE } from '../constant'
+
+const PREFIX_URL_IMAGE = 'https://cataas.com'
 
 // custom hook
 export function useCatImage ({ fact }) {
@@ -14,5 +15,5 @@ export function useCatImage ({ fact }) {
       .then(data => setImageURL(data.url))
   }, [fact])
 
-  return { imageUrl }
+  return { imageUrl: `${PREFIX_URL_IMAGE}${imageUrl}` }
 }
