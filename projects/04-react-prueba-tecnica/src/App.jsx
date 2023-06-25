@@ -1,16 +1,11 @@
 import { useEffect, useState } from 'react'
 import { getRandomFact } from './services/facts'
 
-export function App () {
-  // const ENDPOINT_URL_FACT = 'https://catfact.ninja/fact'
-  const PREFIX_URL_IMAGE = 'https://cataas.com'
+const PREFIX_URL_IMAGE = 'https://cataas.com'
 
-  const [fact, setFact] = useState()
+// custom hook
+function useCatImage ({ fact }) {
   const [imageUrl, setImageURL] = useState()
-
-  useEffect(() => {
-    getRandomFact().then(newFact => setFact(newFact))
-  }, [])
 
   useEffect(() => {
     if (!fact) return
@@ -20,6 +15,17 @@ export function App () {
       .then(res => res.json())
       .then(data => setImageURL(data.url))
   }, [fact])
+
+  return { imageUrl }
+}
+
+export function App () {
+  const [fact, setFact] = useState()
+  const { imageUrl } = useCatImage({ fact })
+
+  useEffect(() => {
+    getRandomFact().then(newFact => setFact(newFact))
+  }, [])
 
   const handleClick = async () => {
     const newFact = await getRandomFact()
