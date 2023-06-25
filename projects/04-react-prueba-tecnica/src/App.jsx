@@ -22,9 +22,16 @@ export function App () {
       .then(data => setImageURL(data.url))
   }, [fact])
 
+  const handleClick = () => {
+    fetch(ENDPOINT_URL_FACT)
+      .then(res => res.json())
+      .then(data => setFact(data.fact))
+  }
+
   return (
     <main>
       <h1>App de gatos</h1>
+      <button onClick={handleClick}>Obtener nuevo hecho</button>
       {fact && <p>{fact}</p>}
       {imageUrl && <img src={`${PREFIX_URL_IMAGE}${imageUrl}`} />}
     </main>
