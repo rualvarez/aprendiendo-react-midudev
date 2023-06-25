@@ -1,6 +1,6 @@
 import { useCatImage } from './hooks/useCatImage'
 import { useCatFact } from './hooks/useCarFact'
-import { Otro } from './components/Otro'
+// import { Otro } from './components/Otro'
 
 export function App () {
   const { fact, refreshFact } = useCatFact()
@@ -17,7 +17,7 @@ export function App () {
       {fact && <p>{fact}</p>}
       {imageUrl && <img src={imageUrl} />}
 
-      <Otro />
+      {/* <Otro /> */}
     </main>
   )
 }

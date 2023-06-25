@@ -14,3 +14,10 @@ APIs:
 
 
 Crear custom Hook
+
+Crear test end-to-end con Playwright: 
+- Instalación: npm init playwright@latest
+- Ejecución: npx playwright test
+Require no esta definido en ES module scope:
+- Cambiar extensión del fichero playwright.config.js a playwright.config.cjs
+- Cambiar en fichero de test (tests/example.spec.js) el require por import
